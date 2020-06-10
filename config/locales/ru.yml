@@ -1,0 +1,22 @@
+ru:
+  building: 'Стройка'
+  floor: 'Этаж'
+  room: 'Комната'
+  task: 'Задача'
+  tasks: 'Задачи'
+  furniture: 'Мебель'
+  material: 'Материалы'
+  title: 'Название'
+  level: 'Этаж'
+  area: 'Площадь'
+  rooms_structure: 'Структура этажа'
+  floor_summary: 'Бюджет'
+  price: 'Цена'
+  quantity: 'Количество'
+  price_per_unit: 'Цена за единицу'
+  summary: 'Суммарная цена'
+  type: 'Тип'
+  work_time: 'Время на работу'
+  deadline: 'Время окончания'
+
+

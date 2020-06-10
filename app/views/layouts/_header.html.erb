@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href= <%=root_path %> >
+  <%= image_tag 'logo-192', size:'32', class: 'mr-2'%>
+  <%= t('building') %></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Подробнее
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href=<%=floor_rooms_path(1)%>>Комнаты первого этажа</a>
+          <a class="dropdown-item" href=<%=floor_rooms_path(2)%>>Комнаты второго этажа</a>
+          <a class="dropdown-item" href="#">Задачи</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Сводка</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>

@@ -1,0 +1,25 @@
+.room-title.text-center.mb-4
+  h4 = @room.name
+  span = @room.floor.title
+  p
+    a href="/floors/#{@room.floor.id}" style="font-size: 40px"
+      = fa_icon("home")
+p.mb-5
+  .row.mb-3
+    .col-3.text-center
+      = image_tag( @room.image, title: @room.name, width: '98px', height: '167px')
+    .col-3
+      .table-responsive
+        table.table.table-striped
+          tbody
+            tr
+              th scope="row" = t('title')
+              td scope="col" = @room.name
+            tr
+              th scope="row" = t('area')
+              td scope="col" = @room.area + " m²"
+            tr
+              th scope="row" = t('tasks')
+              td scope="col" = 4 - @room.id
+    .col-6
+      = bar_chart Room.pluck(:name, :area).sort_by {|name, area| area.to_i}, label: "Площадь" , colors: ["#f28d27"]

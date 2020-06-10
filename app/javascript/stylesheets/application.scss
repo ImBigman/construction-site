@@ -1,0 +1,39 @@
+@import '~bootstrap/scss/bootstrap';
+@import 'main.css';
+
+.octicon {
+  display: inline-block;
+  vertical-align: text-top;
+}
+
+svg {
+  fill: currentColor;
+}
+
+.brightness {
+  background-color: white;
+  display: inline-block;
+
+
+}
+.brightness img:hover {
+  opacity: .75;
+}
+
+.grey-bg {
+  background-color: #F5F7FA;
+}
+
+.border-1 {
+  border-width:1.6px !important;
+}
+
+p.wrapper {
+  padding: 0.85px;
+  background-color: #aa5500;
+}
+
+img {
+  max-width:100%;
+}
+
