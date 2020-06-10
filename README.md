@@ -1,24 +1,15 @@
-# README
+![Build logo](/app/assets/images/log192.png "Build Logo")
+Site for the townhouse repair.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Features
 
-Things you may want to cover:
+* List of rooms and floors
+* Tasks and charts
+* Image map for rooms navigation
 
-* Ruby version
+  Use gems in project:
+  * jquery-rails
+  * chartkick
 
-* System dependencies
+ 
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
