@@ -1,32 +1,32 @@
 .row
-  .col-8
-    = image_tag(@floor.large_image, usemap:"#" + @floor.map.map(&:name).join, class: "map")
-    .image-map-1
-      map(name = @floor.map.map(&:name).join id = @floor.map.map(&:name).join)
-        =@floor.map.map(&:coords).join.html_safe
-  .col-4
-    p.mb-5
-      .table-responsive
-        table.table.table-striped
-          tbody
-            tr
-              th scope="row" = t('title')
-              td scope="col" = @floor.title
-            tr
-              th scope="row" = t('level')
-              td scope="col" = @floor.level
-            tr
-              th scope="row" = t('area')
-              td scope="col" = @floor.area
-            tr
-              th scope="row" = t('rooms_structure')
-              td scope="col" = @floor.rooms_structure
-            tr
-              th scope="row" = t('floor_summary')
-              td scope="col" = @floor.summary.to_s + "k"
-            tr
-              th scope="row" = t('tasks')
-              td scope="col" = 4 - @floor.id
-
-    = bar_chart @floor.rooms.pluck(:name, :area).sort_by { |name, area| area.to_i }, label: "Площадь" , colors: ["#f28d27"]
+  - cache @floor
+    .col-8
+      = image_tag(@floor.large_image, usemap:"#" + @floor.map.map(&:name).join, class: "map")
+      .image-map-1
+        map(name = @floor.map.map(&:name).join id = @floor.map.map(&:name).join)
+          =@floor.map.map(&:coords).join.html_safe
+    .col-4
+      p.mb-5
+        .table-responsive
+          table.table.table-striped
+            tbody
+              tr
+                th scope="row" = t('title')
+                td scope="col" = @floor.title
+              tr
+                th scope="row" = t('level')
+                td scope="col" = @floor.level
+              tr
+                th scope="row" = t('area')
+                td scope="col" = @floor.area
+              tr
+                th scope="row" = t('rooms_structure')
+                td scope="col" = @floor.rooms_structure
+              tr
+                th scope="row" = t('floor_summary')
+                td scope="col" = @floor.summary.to_s + "k"
+              tr
+                th scope="row" = t('tasks')
+                td scope="col" = 4 - @floor.id
+      = bar_chart rooms_area_floor_path, label: 'Площадь', colors: ["#f28d27"]
 

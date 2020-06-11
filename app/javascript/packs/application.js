@@ -12,6 +12,7 @@ require("../scripts/map.init.js")
 require("chartkick")
 require("chart.js")
 
+import "controllers"
 import 'bootstrap'
 import '../stylesheets/application'
 
@@ -27,3 +28,4 @@ document.addEventListener('turbolinks: load', () => {
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+

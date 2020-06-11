@@ -72,10 +72,12 @@ ActiveRecord::Schema.define(version: 2020_06_03_132414) do
 
   create_table "tasks", force: :cascade do |t|
     t.string "title", null: false
+    t.integer "position"
     t.integer "price", null: false
     t.string "work_time"
     t.date "deadline"
     t.bigint "room_id", null: false
+    t.boolean "completed", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["room_id"], name: "index_tasks_on_room_id"

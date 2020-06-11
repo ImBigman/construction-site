@@ -1,5 +1,6 @@
 class Task < ApplicationRecord
-  belongs_to :rooms
+  acts_as_list
+  belongs_to :room
 
-  validates %s(title price room_id), presence: true
+  validates :title, :price, :room_id, presence: true
 end
