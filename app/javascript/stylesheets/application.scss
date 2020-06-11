@@ -1,5 +1,4 @@
 @import '~bootstrap/scss/bootstrap';
-@import 'main.css';
 
 .octicon {
   display: inline-block;
@@ -13,9 +12,8 @@ svg {
 .brightness {
   background-color: white;
   display: inline-block;
-
-
 }
+
 .brightness img:hover {
   opacity: .75;
 }
@@ -29,8 +27,8 @@ svg {
 }
 
 p.wrapper {
-  padding: 0.85px;
-  background-color: #aa5500;
+  padding: 0 0 0.65px 0;
+  background-color: #ff8800;
 }
 
 img {

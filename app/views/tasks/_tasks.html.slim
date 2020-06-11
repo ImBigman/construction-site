@@ -1,0 +1,23 @@
+p
+  = t('tasks') + ":"
+div data-controller="drag" data-drag-url="/tasks/:id/move"
+  - resource.tasks.order(position: :asc).each do |task|
+    .row.card.rounded.shadow-sm.border-1.mb-2 data-id="#{task.id}"
+      .table-responsive
+        table.table.table-sm
+          thead.text-center
+            -if task.completed
+              tr.bg-success style="font-size: 10pt; color: white;"
+            -else
+              tr.bg-secondary style="font-size: 10pt; color: white;"
+                th scope="col" = t('title')
+                th scope="col" = t('price')
+                th scope="col" = t('work_time')
+                th scope="col" = t('deadline')
+          tbody.text-center
+            tr style="font-size: 11pt;"
+              td scope="col" = task.title
+              td scope="col" = task.price
+              td scope="col" = task.work_time
+              td scope="col" = task.deadline
+

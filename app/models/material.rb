@@ -4,5 +4,5 @@ class Material < ApplicationRecord
   has_many :tasks, dependent: :destroy
   belongs_to :floors
 
-  validates %s(name area floor_id), presence: true
+  validates :name, :area, :floor_id, presence: true
 end
