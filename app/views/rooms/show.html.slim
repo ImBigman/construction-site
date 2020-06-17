@@ -2,10 +2,9 @@
 .room-title.text-center.mb-4
   - cache @room
     h4 = @room.name
-    span = @room.floor.title
-    p
-      a href="/floors/#{@room.floor.id}" style="font-size: 40px"
-        = fa_icon("home")
+    a style="text-decoration: none;" href="/floors/#{@room.floor.id}"
+      i.p-1 style="color: #ff8800;" = octicon("triangle-left", :height => 18)
+      span.text-secondary = @room.floor.title
 p.mb-5
   .row.mb-3
     .col-6
@@ -25,10 +24,24 @@ p.mb-5
                 tr
                   th scope="row" = t('tasks')
                   td scope="col" = @room.tasks.count
-      .row
-          = bar_chart Room.pluck(:name, :area).sort_by {|name, area| area.to_i}, label: "Площадь" , colors: ["#f28d27"]
     .col-6
-      = render "tasks/tasks", resource: @room
+      .table-responsive
+        table.table.table-striped.table-sm
+          tbody
+            tr
+              th scope="row" = t('title')
+              td scope="col" = @room.name
+            tr
+              th scope="row" = t('area')
+              td scope="col" = @room.area + " m²"
+            tr
+              th scope="row" = t('tasks')
+              td scope="col" = @room.tasks.count
+.row
+  .col-6
+    = render "tasks/tasks", resource: @room
+  .col-6
+    = render "tasks/tasks", resource: @room
 
 
   .col-6

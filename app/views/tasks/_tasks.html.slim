@@ -1,23 +1,33 @@
-p
-  = t('tasks') + ":"
+.row
+  .col-4
+    = t('tasks') + ":"
+  .col-8.text-right
+    = content_tag(:a, octicon("plus", height: 20, color: '#ff8800' ), href: 'x')
+
 div data-controller="drag" data-drag-url="/tasks/:id/move"
   - resource.tasks.order(position: :asc).each do |task|
     .row.card.rounded.shadow-sm.border-1.mb-2 data-id="#{task.id}"
       .table-responsive
-        table.table.table-sm
+        table.table.table-sm.mb-1
           thead.text-center
             -if task.completed
               tr.bg-success style="font-size: 10pt; color: white;"
             -else
               tr.bg-secondary style="font-size: 10pt; color: white;"
+                th scope="col" = task.id
                 th scope="col" = t('title')
                 th scope="col" = t('price')
                 th scope="col" = t('work_time')
                 th scope="col" = t('deadline')
+                th scope="col" = octicon("grabber", height: 20)
           tbody.text-center
             tr style="font-size: 11pt;"
-              td scope="col" = task.title
-              td scope="col" = task.price
-              td scope="col" = task.work_time
-              td scope="col" = task.deadline
-
+              - if task.completed
+                td scope="col" = content_tag(:a, octicon("check",  height: 20), class:'text-success')
+              -else
+                td scope="col" = content_tag(:a, octicon("check",  height: 20), class:'text-secondary', href: 'x')
+                td scope="col" = task.title
+                td scope="col" = task.price
+                td scope="col" = task.work_time
+                td scope="col" = I18n.localize(task.deadline)
+                td scope="col" = content_tag(:a, octicon("x", height: 20, color: 'red'), href: 'x')

@@ -33,8 +33,8 @@ gem 'chartkick'
 gem 'devise'
 gem 'font-awesome-rails'
 gem 'gon'
-gem 'octicons', '~> 9.4'
-gem 'octicons_helper'
+gem 'octicons', '~> 10.0'
+gem 'octicons_helper', '~> 10.0'
 gem 'rails-i18n', '~> 6.0.0'
 gem 'slim-rails'
 
@@ -60,5 +60,3 @@ group :test do
   gem 'shoulda-matchers'
   gem 'webdrivers'
 end
-
-
