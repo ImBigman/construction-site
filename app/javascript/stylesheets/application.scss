@@ -22,6 +22,16 @@ svg {
   background-color: #F5F7FA;
 }
 
+.orange-bg {
+  background-color: #ff8800;
+  color: white;
+}
+
+.orange-bg:hover {
+  background-color: #ff8800bc;
+  color: white;
+}
+
 .border-1 {
   border-width:1.6px !important;
 }
@@ -35,3 +45,17 @@ img {
   max-width:100%;
 }
 
+.modal-body label {
+  font-size: 10pt;
+}
+// .modal-header {
+//   background-color: #ff8800;
+// }
+
+.modal-title {
+  color: white;
+}
+
+abbr {
+  color: red;
+}
