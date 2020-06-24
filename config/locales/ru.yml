@@ -16,7 +16,10 @@ ru:
   price_per_unit: 'Цена за единицу'
   summary: 'Суммарная цена'
   type: 'Тип'
-  work_time: 'Время на работу'
-  deadline: 'Время окончания'
-
+  work_time: 'Часов на работу'
+  deadline: 'Дата окончания'
+  task_price: 'Стоимость'
+  new_task: 'Новая задача'
+  create: 'Создать'
+  cancel: 'Отмена'
 
