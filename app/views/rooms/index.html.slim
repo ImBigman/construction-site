@@ -5,7 +5,8 @@ p
     -group.compact.each do |room|
       - cache room
         .col-3.text-center
-          = image_tag( room.image, title: room.name, width: '98px', height: '167px')
+          = link_to room_path(room)
+            = image_tag( room.image, title: room.name, width: '98px', height: '167px')
         .col-3.card.rounded.shadow-sm.border-1
               .table-responsive
                 table.table.table-striped
