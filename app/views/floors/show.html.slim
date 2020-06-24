@@ -27,6 +27,6 @@
                 td scope="col" = @floor.summary.to_s + "k"
               tr
                 th scope="row" = t('tasks')
-                td scope="col" = 4 - @floor.id
+                td scope="col" = @floor.rooms.map { |room| room.tasks.count }.sum
       = bar_chart rooms_area_floor_path, label: 'Площадь', colors: ["#f28d27"]
 

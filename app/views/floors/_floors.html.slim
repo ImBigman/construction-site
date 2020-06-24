@@ -29,7 +29,7 @@
                 td scope="col" = floor.summary.to_s + "k"
               tr
                 th scope="row" = t('tasks')
-                td scope="col" = 4 - floor.id
+                td scope="col" = floor.rooms.map { |room| room.tasks.count }.sum
       .col-5
         .card.rounded.shadow-sm.border-1.p-1#1
           .card-content
