@@ -21,7 +21,7 @@
                 td scope="col" = @floor.area
               tr
                 th scope="row" = t('rooms_structure')
-                td scope="col" = @floor.rooms_structure
+                td scope="col" = @floor.rooms.map {|room| ("<a href=" + room_path(room) +">" + room.name + "</a>") }.join(', ').html_safe
               tr
                 th scope="row" = t('floor_summary')
                 td scope="col" = @floor.summary.to_s + "k"

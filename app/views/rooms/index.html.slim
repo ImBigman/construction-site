@@ -1,4 +1,4 @@
-h4.ptext-center = @floor.title
+h4.text-center = @floor.title
 p
 - @floor.rooms.in_groups_of(2).each do |group|
   .row.mb-3
@@ -22,4 +22,4 @@ p
                       td scope="col" = room.area.to_s + " m²"
                     tr
                       th scope="row" = t('tasks')
-                      td scope="col" = 4 - room.id
+                      td scope="col" = room.tasks.count
