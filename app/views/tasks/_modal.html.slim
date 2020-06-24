@@ -1,8 +1,8 @@
 div class="modal fade" id="taskModal" tabindex="-1" role="dialog" aria-labelledby="taskModalLabel" aria-hidden="true"
   .modal-dialog role="document"
     .modal-content
-      .modal-header.bg-secondary
-        h5.modal-title#taskModalLabel = t('new_task')
+      .modal-header.bg-secondary style="padding: 8px;"
+        h5.modal-title#taskModalLabel  = t('new_task')
         button type="button" class="close" data-dismiss="modal" aria-label="Close"
           span.text-white aria-hidden="true" &times;
       .modal-body
@@ -17,8 +17,8 @@ div class="modal fade" id="taskModal" tabindex="-1" role="dialog" aria-labelledb
 
             = f.input :deadline, label: t('deadline')
 
-            .modal-footer
+            .modal-footer style="padding: 0; border: 0px;"
               = f.button :submit, t('create'), class: "orange-bg"
 
-              = f.button :button, t('cancel'), type: "reset", data: { dismiss:"modal" }, class: "btn-outline-secondary"
+              = f.button :button, t('cancel'), type: "reset", data: { dismiss:"modal" }, class: "btn-secondary"
 
