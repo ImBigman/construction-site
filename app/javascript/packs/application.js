@@ -13,6 +13,7 @@ require("../scripts/modal.init.js")
 require("chartkick")
 require("chart.js")
 
+import './bootstrap_custom.js'
 import "controllers"
 import 'bootstrap'
 import '../stylesheets/application'
