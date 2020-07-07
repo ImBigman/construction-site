@@ -1,10 +1,5 @@
-.row.d-flex
-  .mr-auto.p-2
-    = t('tasks') + ":"
-  .p-2
-    = content_tag(:a, octicon("plus", height: 20, color: '#ff8800' ), href: '/', data: {toggle:"modal", target:"#taskModal", whatever:"@mdo"})
 div.tasks data-controller="drag" data-drag-url="/tasks/:id/move"
-  - resource.tasks.order(position: :asc).order(completed: :desc).each do |task|
+  - tasks.order(position: :asc).order(completed: :desc).each do |task|
     .row.card.rounded.shadow-sm.border-1.mb-2 data-id="#{task.id}" class='task_id_"#{task.id}"'
       .table-responsive
         table.table.table-sm.mb-1
@@ -23,5 +18,4 @@ div.tasks data-controller="drag" data-drag-url="/tasks/:id/move"
               td scope="col" = task.price
               td scope="col" = task.work_time
               td scope="col" = I18n.localize(task.deadline)
-              td scope="col" = link_to(octicon("x", height: 20, color: 'red'), task_path(task),  data: {confirm: t('are_you')},  method: :delete, remote: true)
-=render 'tasks/modal',  resource: resource.tasks.new
+              td scope="col" = link_to(octicon("x", height: 20, color: 'red'), task_path(task),  data: {confirm: t('are_yo
