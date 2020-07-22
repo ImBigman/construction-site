@@ -1,10 +1,10 @@
 .row
   - cache @floor
     .col-8
-      = image_tag(@floor.large_image, usemap:"#" + @floor.map.map(&:name).join, class: "map")
+      = image_tag(@floor.large_image, usemap:"#" + @floor.map.name, class: "map")
       .image-map-1
-        map(name = @floor.map.map(&:name).join id = @floor.map.map(&:name).join)
-          =@floor.map.map(&:coords).join.html_safe
+        map(name = @floor.map.name id = @floor.map.name)
+          =@floor.map.coords.html_safe
     .col-4
       p.mb-5
         .table-responsive

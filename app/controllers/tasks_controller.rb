@@ -1,7 +1,7 @@
 class TasksController < ApplicationController
   def create
-    room.tasks.create!(task_params)
-    # @task.save!
+    @task = room.tasks.new(task_params)
+    @task.save
   end
 
   def update
@@ -9,7 +9,6 @@ class TasksController < ApplicationController
   end
 
   def destroy
-    @room = task.room
     task.destroy
   end
 
