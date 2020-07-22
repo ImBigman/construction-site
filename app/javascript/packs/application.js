@@ -9,9 +9,11 @@ require("@rails/activestorage").start()
 require("channels")
 require("../scripts/jquery.maphilight.min.js")
 require("../scripts/map.init.js")
+require("../scripts/modal.init.js")
 require("chartkick")
 require("chart.js")
 
+import './bootstrap_custom.js'
 import "controllers"
 import 'bootstrap'
 import '../stylesheets/application'

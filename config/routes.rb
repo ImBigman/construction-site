@@ -7,10 +7,11 @@ Rails.application.routes.draw do
     end
     resources :rooms, shallow: true
   end
-    # resources :subscriptions, shallow: true, only: %i[create destroy]
+
   resources :tasks, shallow: true, only: %i[create destroy update] do
     member do
       patch :move
+      patch :finish_task
     end
   end
 

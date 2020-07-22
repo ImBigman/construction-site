@@ -1,10 +1,10 @@
 .row
   - cache @floor
     .col-8
-      = image_tag(@floor.large_image, usemap:"#" + @floor.map.map(&:name).join, class: "map")
+      = image_tag(@floor.large_image, usemap:"#" + @floor.map.name, class: "map")
       .image-map-1
-        map(name = @floor.map.map(&:name).join id = @floor.map.map(&:name).join)
-          =@floor.map.map(&:coords).join.html_safe
+        map(name = @floor.map.name id = @floor.map.name)
+          =@floor.map.coords.html_safe
     .col-4
       p.mb-5
         .table-responsive
@@ -21,12 +21,12 @@
                 td scope="col" = @floor.area
               tr
                 th scope="row" = t('rooms_structure')
-                td scope="col" = @floor.rooms_structure
+                td scope="col" = @floor.rooms.map {|room| ("<a href=" + room_path(room) +">" + room.name + "</a>") }.join(', ').html_safe
               tr
                 th scope="row" = t('floor_summary')
                 td scope="col" = @floor.summary.to_s + "k"
               tr
                 th scope="row" = t('tasks')
-                td scope="col" = 4 - @floor.id
+                td scope="col" = @floor.rooms.map { |room| room.tasks.count }.sum
       = bar_chart rooms_area_floor_path, label: 'Площадь', colors: ["#f28d27"]
 

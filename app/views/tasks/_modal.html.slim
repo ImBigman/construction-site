@@ -1,0 +1,24 @@
+div class="modal fade" id="taskModal" tabindex="-1" role="dialog" aria-labelledby="taskModalLabel" aria-hidden="true"
+  .modal-dialog role="document"
+    .modal-content
+      .modal-header.bg-secondary style="padding: 8px;"
+        h5.modal-title#taskModalLabel  = t('new_task')
+        button type="button" class="close" data-dismiss="modal" aria-label="Close"
+          span.text-white aria-hidden="true" &times;
+      .modal-body
+        form
+          = simple_form_for resource, url: tasks_path, wrapper: :horizontal_form, wrapper_mappings: { date: :horizontal_multi_select,  datetime: :horizontal_multi_select, range: :horizontal_range, time: :horizontal_multi_select } do |f|
+
+            = f.input :title, label: t('title')
+
+            = f.input :price, label: t('task_price')
+
+            = f.input :work_time, label: t('work_time')
+
+            = f.input :deadline, label: t('deadline')
+
+            .modal-footer style="padding: 0; border: 0px;"
+              = f.button :submit, t('create'), class: "orange-bg"
+
+              = f.button :button, t('cancel'), type: "reset", data: { dismiss:"modal" }, class: "btn-secondary"
+

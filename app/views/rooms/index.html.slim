@@ -1,11 +1,12 @@
-h4.ptext-center = @floor.title
+h4.text-center = @floor.title
 p
 - @floor.rooms.in_groups_of(2).each do |group|
   .row.mb-3
     -group.compact.each do |room|
       - cache room
         .col-3.text-center
-          = image_tag( room.image, title: room.name, width: '98px', height: '167px')
+          = link_to room_path(room)
+            = image_tag( room.image, title: room.name, width: '98px', height: '167px')
         .col-3.card.rounded.shadow-sm.border-1
               .table-responsive
                 table.table.table-striped
@@ -18,7 +19,7 @@ p
                       td scope="col" = room.name
                     tr
                       th scope="row" = t('area')
-                      td scope="col" = room.area + " m²"
+                      td scope="col" = room.area.to_s + " m²"
                     tr
                       th scope="row" = t('tasks')
-                      td scope="col" = 4 - room.id
+                      td scope="col" = room.tasks.count
