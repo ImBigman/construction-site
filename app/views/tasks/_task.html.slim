@@ -1,0 +1,21 @@
+div.tasks data-controller="drag" data-drag-url="/tasks/:id/move"
+  - tasks.order(position: :asc).order(completed: :desc).each do |task|
+    .row.card.rounded.shadow-sm.border-1.mb-2 data-id="#{task.id}" class='task_id_"#{task.id}"'
+      .table-responsive
+        table.table.table-sm.mb-1
+          thead.text-center
+              tr style="font-size: 10pt; color: white;" class="bg-#{ task.completed? ? 'success' : 'secondary' }"
+                th scope="col" = task.id
+                th scope="col" = t('title')
+                th scope="col" = t('price')
+                th scope="col" = t('work_time')
+                th scope="col" = t('deadline')
+                th scope="col" = octicon("grabber", height: 20)
+          tbody.text-center
+            tr style="font-size: 11pt;"
+              td scope="col" = link_to  octicon("check",  height: 20), finish_task_task_path(task), method: :patch, remote: true, class: "text-#{ task.completed? ? 'success' : 'secondary' }"
+              td scope="col" = task.title
+              td scope="col" = task.price
+              td scope="col" = task.work_time
+              td scope="col" = I18n.localize(task.deadline)
+              td scope="col" = link_to(octicon("x", height: 20, color: 'red'), task_path(task),  data: {confirm: t('are_yo
