@@ -3,52 +3,37 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.3'
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.2'
-# Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
-# Use Puma as the app server
 gem 'puma', '~> 4.3'
-# Use SCSS for stylesheets
-gem 'sass-rails', '>= 6'
-# Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
-gem 'webpacker', '~> 4.0'
-# Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-gem 'turbolinks', '~> 5'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.7'
-# Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 4.0'
-# Use Active Model has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'sass-rails'
+gem 'webpacker'
+gem 'turbolinks'
+gem 'jbuilder'
 
-# Use Active Storage variant
-# gem 'image_processing', '~> 1.2'
-
-# Reduces boot times through caching; required in config/boot.rb
-gem 'acts_as_list', '~> 1.0'
-gem 'bootsnap', '>= 1.4.2', require: false
+gem 'acts_as_list'
+gem 'bootsnap', require: false
 gem 'cancancan'
 gem 'chartkick'
 gem 'devise'
 gem 'font-awesome-rails'
 gem 'gon'
-gem 'octicons', '~> 10.0'
-gem 'octicons_helper', '~> 10.0'
-gem 'rails-i18n', '~> 6.0.0'
+gem 'octicons'
+gem 'octicons_helper'
+gem 'rails-i18n'
 gem 'simple_form'
 gem 'slim-rails'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'letter_opener'
-  gem 'rspec-rails', '~> 4.0.0.beta'
+  gem 'rspec-rails'
 end
 
 group :development do
-  gem 'listen', '>= 3.0.5', '< 3.2'
-  gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'web-console', '>= 3.3.0'
+  gem 'listen'
+  gem 'spring-watcher-listen'
+  gem 'web-console'
 end
 
 group :test do
